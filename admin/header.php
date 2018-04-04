@@ -37,11 +37,11 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Posts">
-              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapsePosts" data-parent="#exampleAccordion">
                   <i class="fa fa-files-o"></i>
                   <span class="nav-link-text">Posts</span>
               </a>
-              <ul class="sidenav-second-level collapse" id="collapseMulti">
+              <ul class="sidenav-second-level collapse" id="collapsePosts">
                   <li>
                       <a href="./posts.php">All Posts</a>
                   </li>
@@ -54,11 +54,11 @@
               </ul>
           </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUsers" data-parent="#exampleAccordion">
             <i class="fa fa-users"></i>
             <span class="nav-link-text">Users</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseMulti">
+          <ul class="sidenav-second-level collapse" id="collapseUsers">
             <li>
               <a href="./users.php">All Users</a>
             </li>

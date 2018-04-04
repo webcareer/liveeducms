@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 	move_uploaded_file($posttempimage, "./img/$postimage");
 
 	$sql = "INSERT INTO posts (id, user_id, category_id, title, content, postimage, active)
-					  VALUES (null, '{$user_id}', '{$category_id}', '{$title}', '{$content}', '{$postimage}', '{active}')";
+					  VALUES (null, '{$user_id}', '{$category_id}', '{$title}', '{$content}', '{$postimage}', '{$active}')";
 
 	if(mysqli_query( $conn, $sql )){
 		header("Location: ./posts.php");
@@ -43,8 +43,17 @@ if(isset($_POST['submit'])){
 						<textarea name="content" id="content" rows="10" class="form-control" ></textarea>
 					</div>
 					<div class="form-group">
-						<label for="content">Category ID</label>
-						<input type="text" name="category_id" id="categort" class="form-control"  >
+						<label for="category_id">Category ID</label>
+                        <select name="category_id" id="category_id" class="form-control">
+                            <?php
+                                $sql_categories = "SELECT * from categories";
+                                $result_categories = mysqli_query($conn, $sql_categories);
+
+                                while($row = mysqli_fetch_assoc($result_categories) ){
+                                    echo "<option value='{$row['id']}'>" .  $row['categoryname'] . "</option>";
+                                }
+                            ?>
+                        </select>
 					</div>
 					<div class="form-group">
 						<div class="form-row">
@@ -54,9 +63,13 @@ if(isset($_POST['submit'])){
 					</div>
 					<div class="form-group">
 						<label for="content">active</label>
-						<input type="text" name="active" id="active" class="form-control"  >
+                        <select id="active" name="active" class="form-control" >
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
+                        </select>
 					</div>
-					<div class="form-group">
+
+                    <div class="form-group">
 						<label for="user_id">User</label>
 						<input type="text" name="user_id" id="user_id" class="form-control" >
 					</div>
