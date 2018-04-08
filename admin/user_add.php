@@ -3,7 +3,7 @@
 <?php
 	if(isset($_POST['submit'])){
 		$username   = $_POST['username'];
-		$password   = $_POST['password'];
+		$password   = md5($_POST['password']);
 		$fname      = $_POST['fname'];
 		$lname      = $_POST['lname'];
 		$email      = $_POST['email'];

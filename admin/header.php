@@ -49,7 +49,7 @@
                       <a href="./post_add.php">Add Post</a>
                   </li>
                   <li>
-                      <a href="./categories.php">Categories</a>
+                      <a href="./post_categories.php">Categories</a>
                   </li>
               </ul>
           </li>

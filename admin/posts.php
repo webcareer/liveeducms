@@ -72,8 +72,8 @@
                                     </td>
 									<td><?php echo $row['active']; ?></td>
 
-									<td><a href="#">Edit</a></td>
-									<td><a href="#">Delete</a></td>
+									<td><a href="./post_edit.php?id=<?php echo $row['id'];?>">Edit</a></td>
+									<td><a href="./post_delete.php?id=<?php echo $row['id'];?>">Delete</a></td>
 								</tr>
 								<?php
 							}
