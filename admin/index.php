@@ -15,11 +15,21 @@
       <div class="card text-white bg-primary o-hidden h-100">
         <div class="card-body">
           <div class="card-body-icon">
-            <i class="fa fa-fw fa-comments"></i>
+            <i class="fa fa-fw fa-file-text-o"></i>
           </div>
-          <div class="mr-5">26 New Messages!</div>
+          <div class="mr-5">
+              <?php
+                    $sql    = "Select count(*) as CCNT FROM posts";
+                    $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($result)){
+                        $CCNT = $row['CCNT'];
+                    }
+                    echo $CCNT;
+              ?>
+              Posts
+          </div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="#">
+        <a class="card-footer text-white clearfix small z-1" href="./posts.php">
           <span class="float-left">View Details</span>
           <span class="float-right">
             <i class="fa fa-angle-right"></i>
@@ -31,11 +41,20 @@
       <div class="card text-white bg-warning o-hidden h-100">
         <div class="card-body">
           <div class="card-body-icon">
-            <i class="fa fa-fw fa-list"></i>
+            <i class="fa fa-fw fa-users"></i>
           </div>
-          <div class="mr-5">11 New Tasks!</div>
+          <div class="mr-5">
+              <?php
+                  $sql    = "Select count(*) as CCNT FROM users";
+                  $result = mysqli_query($conn, $sql);
+                  while($row = mysqli_fetch_assoc($result)){
+                      $CCNT = $row['CCNT'];
+                  }
+                  echo $CCNT;
+              ?>
+              Users</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="#">
+        <a class="card-footer text-white clearfix small z-1" href="./users.php">
           <span class="float-left">View Details</span>
           <span class="float-right">
             <i class="fa fa-angle-right"></i>

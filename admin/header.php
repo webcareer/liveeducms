@@ -1,5 +1,15 @@
 <?php include "connection.php"; ?>
 <?php ob_start(); ?>
+<?php session_start(); ?>
+<?php
+    if(!isset($_SESSION['username']) && !isset($_SESSION['fname']) && !isset($_SESSION['lname']) && !isset($_SESSION['rights'])){
+        header('Location: ../index.php');
+    }
+
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +41,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="index.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
